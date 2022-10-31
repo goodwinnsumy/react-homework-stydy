@@ -19,7 +19,7 @@ export function LoadingActionComments() {
                   payload: Response.data
 
               })
-              console.log(Response)
+              // console.log(Response)
           }
           )
           .catch(error => {

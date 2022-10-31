@@ -2,6 +2,7 @@ import './App.css';
 import {Component} from "react";
 import Comments from "./components/Comments/Comments";
 import Posts from "./components/Posts/Posts";
+import Listtodo from "./components/Listtodo/Listtodo";
 
 class App extends Component {
 
@@ -19,24 +20,16 @@ class App extends Component {
 
   render() {
 
-    const hello = "Доброго вечора!!!",
-      hello1 = {a: 1, s: 4},
-      visible = false;
+    // const hello = "Доброго вечора!!!",
+    //   hello1 = {a: 1, s: 4},
+    //   visible = false;
 
     return (
 
       <>
-        {/*<Header/>*/}
-        {/*<CssModules/>*/}
-        {/*<StyledComponents/>*/}
-        <Posts/>
-        {/*<Page/>*/}
-        {/*<List addHandler={(el) => this.arrAddHandler(el)} name={"List"} arr={this.state.arr}/>*/}
-        {/*{this.state.visibleCounter && <Counter name={"Counter"}/>}*/}
-        {/*<button onClick={() => this.setState({visibleCounter: !this.state.visibleCounter})}> Click</button>*/}
-
-        <Comments/>
-
+        <Listtodo/>
+        {/*<Posts/>*/}
+        {/*<Comments/>*/}
       </>
     );
   }

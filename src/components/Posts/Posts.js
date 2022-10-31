@@ -1,45 +1,52 @@
-import React, {Component} from 'react';
-import {connect} from "react-redux";
-import {LoadedAction} from "./asyncAction";
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {LoadedActionPosts} from "./asyncActionPosts";
 import "./Post.scss"
 import {RingLoader} from "react-spinners";
 
-class Posts extends Component {
+const Posts = (props) => {
 
-    componentDidMount() {
-        // axios('https://jsonplaceholder.typicode.com/posts')
-        //   .then(res => console.log(res))
-        this.props.dispatch(LoadedAction())
-    }
+  // componentDidMount() {
+  //     // axios('https://jsonplaceholder.typicode.com/posts')
+  //     //   .then(res => console.log(res))
+  //
+  // }
 
-    render() {
-        const {posts, dispatch} = this.props
+  const dispatch = useDispatch();
 
-        const postsMap = posts.posts.map((post,i) => {
-            return <p className={"p"} key={post.id}>{ post.title } </p>
-        })
+  // const [count, setCount] = useState(0);
 
-        const styleSpiner = {
-            display: "block",
-            margin: "0 auto",
-            // borderColor: "red",
-        };
+  // console.log("qqqqq")
 
-        return (
-          <div>
-              {posts.loading ? <RingLoader color="#36d7b7" size={200} cssOverride={styleSpiner} /> : postsMap}
-          </div>
-        );
-    }
+  useEffect(()=>{
+    // setCount(count+1)
+    dispatch(LoadedActionPosts())
+
+    // return ()=> console.log("bye")
+  },[])
+
+  const posts = useSelector((store)=>store.posts);
+
+  // const {posts, dispatch} = this.props
+
+  const postsMap = posts?.posts?.map((post, i) => {
+    return <p className={"p"} key={post.id}>{post.title} </p>
+  })
+
+  const styleSpinerPosts = {
+    display: "block",
+    margin: "0 auto",
+    // borderColor: "red",
+  };
+
+  return (
+    <div>
+
+      {posts?.loading ? <RingLoader color="#36d7b7" size={200} cssOverride={styleSpinerPosts}/> : postsMap}
+      {/*{loading ? <Loader/> : postsMap}*/}
+    </div>
+  );
+
 }
 
-function mapStateToProps(store) {
-    return{
-        posts: store.posts
-    }
-}
-
-export default connect(mapStateToProps)(Posts);
-
-
-
+export default Posts;
