@@ -1,11 +1,11 @@
 import {combineReducers} from "redux";
 import postsReducer from "../components/Posts/postsReducer";
 import commentsReducer from "../components/Comments/commentsReducer";
-import listtodoReducer from "../components/Listtodo/listtodoReducer";
+import listReducer from "../components/List/listReducer";
 
 
 export default combineReducers({
   posts: postsReducer,
   comments: commentsReducer,
-  listtodo: listtodoReducer,
+  list: listReducer,
 },);

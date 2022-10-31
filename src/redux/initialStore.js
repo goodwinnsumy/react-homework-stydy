@@ -8,9 +8,9 @@ const initialStore = {
     loading: false,
     comments: []
   },
-  listtodo: {
+  list: {
     loading: false,
-    listtodo: []
+    list: []
   }
 };
 
