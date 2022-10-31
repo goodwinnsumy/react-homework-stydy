@@ -2,7 +2,7 @@ import './App.css';
 import {Component} from "react";
 import Comments from "./components/Comments/Comments";
 import Posts from "./components/Posts/Posts";
-import List from "./components/List/List";
+import Todo from "./components/Todo/Todo";
 
 class App extends Component {
 
@@ -27,9 +27,9 @@ class App extends Component {
     return (
 
       <>
-        <List/>
-        {/*<Posts/>*/}
-        {/*<Comments/>*/}
+        <Todo/>
+        <Posts/>
+        <Comments/>
       </>
     );
   }

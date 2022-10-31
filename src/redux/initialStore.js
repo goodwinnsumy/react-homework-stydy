@@ -8,9 +8,9 @@ const initialStore = {
     loading: false,
     comments: []
   },
-  list: {
+  todos: {
     loading: false,
-    list: []
+    todos: []
   }
 };
 
