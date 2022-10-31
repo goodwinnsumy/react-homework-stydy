@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {LoadingActionListtodo} from "./asyncActionList";
+import {LoadingActionList} from "./asyncActionList";
 import {DotLoader} from "react-spinners";
 import "./list.scss"
 
@@ -15,7 +15,7 @@ const List = (props) => {
   const list = useSelector((store)=>store.list);
 
   const listMap = list.list.map((todo) => {
-    return <p className={"todos"} key={todo.id}> {todo.title} </p>
+    return <div className={"todos"} key={todo.id}> {todo.title} </div>
   })
 
   const styleSpinerList ={
@@ -25,7 +25,7 @@ const List = (props) => {
 
   return (
     <div>
-      {list.loading ? <DotLoader color="#7936d6" size={50} cssOverride={styleSpinerList} /> : listMap}
+      {list.loading? <DotLoader color="#7936d6" size={50} cssOverride={styleSpinerList} /> : listMap}
     </div>
   );
 }
