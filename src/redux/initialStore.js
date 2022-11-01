@@ -11,7 +11,8 @@ const initialStore = {
   todos: {
     loading: false,
     todos: []
-  }
+  },
+  auth: false
 };
 
 export default initialStore;
